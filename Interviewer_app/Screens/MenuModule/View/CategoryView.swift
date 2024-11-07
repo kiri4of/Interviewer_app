@@ -1,25 +1,25 @@
 import UIKit
 
 class CategoryView: UIView {
-    var currentCategoryLabel: UILabel = {
+    private var currentCategoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Current category:"
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.font = AppFonts.inter14Regular
+        label.textColor = AppColor.buttonPrimaryBgColor
         return label
     }()
     
-    var categoryLabel: UILabel = {
+    private var categoryLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = .white
+        label.font = AppFonts.inter12SemiBold
+        label.textColor = AppColor.primaryTextColor
         return label
     }()
     
-    var imageView: UIImageView = {
+    private var imageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "chevron.forward.circle")
-        image.backgroundColor = .white
+        image.tintColor = AppColor.buttonPrimaryBgColor
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -27,12 +27,19 @@ class CategoryView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        configurateUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setUI(categoryText: String) {
+        categoryLabel.text = categoryText
+    }
+}
+
+extension CategoryView {
     private func setupViews() {
         addSubview(currentCategoryLabel)
         addSubview(categoryLabel)
@@ -51,8 +58,19 @@ class CategoryView: UIView {
         
         imageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
+            make.width.height.equalTo(20)
             make.right.equalToSuperview().offset(-16)
             make.width.height.equalTo(24)
         }
+    }
+    
+    private func configurateUI(){
+        backgroundColor = AppColor.viewPrimaryColor
+        
+        layer.shadowColor = UIColor.white.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowRadius = 4
+        layer.cornerRadius = 10
     }
 }
