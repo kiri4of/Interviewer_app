@@ -33,6 +33,7 @@
 		F7F9AE3E2CDD307900A6EDF6 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77CB13A2CDBA62E002D98A8 /* WorkSans-Bold.ttf */; };
 		F7F9AE3F2CDD307900A6EDF6 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77CB13B2CDBA62E002D98A8 /* WorkSans-Regular.ttf */; };
 		F7F9AE412CDD345300A6EDF6 /* ParametersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE402CDD345300A6EDF6 /* ParametersButton.swift */; };
+		F7F9AE452CE147A400A6EDF6 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE442CE147A400A6EDF6 /* QuestionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		F77CB1482CDBA87D002D98A8 /* Dimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimension.swift; sourceTree = "<group>"; };
 		F7F9AE392CDD234700A6EDF6 /* CGFloat + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat + Extension.swift"; sourceTree = "<group>"; };
 		F7F9AE402CDD345300A6EDF6 /* ParametersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersButton.swift; sourceTree = "<group>"; };
+		F7F9AE442CE147A400A6EDF6 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		F77CB1122CC69986002D98A8 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F7F9AE422CE1476700A6EDF6 /* QuestionsModule */,
 				F77CB1162CC699C1002D98A8 /* MenuModule */,
 			);
 			path = Screens;
@@ -245,6 +248,22 @@
 			path = Adaptive;
 			sourceTree = "<group>";
 		};
+		F7F9AE422CE1476700A6EDF6 /* QuestionsModule */ = {
+			isa = PBXGroup;
+			children = (
+				F7F9AE432CE1479100A6EDF6 /* Controller */,
+			);
+			path = QuestionsModule;
+			sourceTree = "<group>";
+		};
+		F7F9AE432CE1479100A6EDF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7F9AE442CE147A400A6EDF6 /* QuestionsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +360,7 @@
 				F77CB1342CCEE817002D98A8 /* CustomButton.swift in Sources */,
 				F77CB1232CC6A0F7002D98A8 /* MenuViewModel.swift in Sources */,
 				F7F9AE3A2CDD234700A6EDF6 /* CGFloat + Extension.swift in Sources */,
+				F7F9AE452CE147A400A6EDF6 /* QuestionsViewController.swift in Sources */,
 				F77CB1452CDBA868002D98A8 /* Helper.swift in Sources */,
 				F77CB1002CC69572002D98A8 /* SceneDelegate.swift in Sources */,
 				F77CB11F2CC69B28002D98A8 /* MenuViewController.swift in Sources */,
