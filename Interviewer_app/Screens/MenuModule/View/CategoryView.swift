@@ -16,8 +16,8 @@ class CategoryView: UIView {
         return label
     }()
     
-    private var imageView: UIImageView = {
-        let image = UIImageView()
+    var imageView: EnlargedImageView = {
+        let image = EnlargedImageView()
         image.image = UIImage(systemName: "chevron.forward.circle")
         image.tintColor = AppColor.buttonPrimaryBgColor
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -58,14 +58,15 @@ extension CategoryView {
         
         imageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.width.height.equalTo(20)
+            make.width.height.equalTo(adapted(dimensionSize: 24, to: dimension))
             make.right.equalToSuperview().offset(-16)
-            make.width.height.equalTo(24)
         }
     }
     
     private func configurateUI(){
         backgroundColor = AppColor.viewPrimaryColor
+        
+        imageView.touchInsets = UIEdgeInsets(top: 70, left: 70, bottom: 70, right: 70)
         
         layer.shadowColor = UIColor.white.cgColor
         layer.shadowOpacity = 0.2

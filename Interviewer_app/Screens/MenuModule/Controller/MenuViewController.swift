@@ -3,11 +3,13 @@ import UIKit
 
 class MenuViewController: BaseViewController<MenuView> {
     private var viewModel: MenuViewModel
+    var coordinator: MenuCoordinator?
     
     init(mainView: MenuView, viewModel: MenuViewModel) {
         self.viewModel = viewModel
         super.init(mainView: mainView)
         self.mainView.bindViewModel(viewModel: viewModel)
+        self.mainView.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -27,4 +29,10 @@ class MenuViewController: BaseViewController<MenuView> {
         viewModel.currentCategory.value = "Combine"
     }
     
+}
+
+extension MenuViewController: MenuViewProtocol {
+    func didTapQuestions() {
+        coordinator?.goQuestionsViewController()
+    }
 }

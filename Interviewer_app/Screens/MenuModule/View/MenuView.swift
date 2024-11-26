@@ -1,6 +1,11 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
+
+protocol MenuViewProtocol: AnyObject {
+    func didTapQuestions()
+}
 
 class MenuView: UIView {
     private let logoImageView = UIImageView()
@@ -9,7 +14,10 @@ class MenuView: UIView {
     private let playButton = CustomButton(title: "Play", font: AppFonts.inter18SemiBold)
     private let gameHistoryButton = CustomButton(title: "Game history", font: AppFonts.inter16Regular)
     private let parametersButton = ParametersButton()
+    private var audioPlayer = AVAudioPlayer()
     private var viewModel: MenuViewModel!
+    
+    weak var delegate: MenuViewProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,5 +86,48 @@ extension MenuView {
         informationView.setUI(categoryText: viewModel.lastGameCategory.value,
                               questionsText: viewModel.lastGameQuestions.value,
                               correctAnswersText: viewModel.lastGameCorrectAnswer.value)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapQuestions))
+        categoryView.imageView.addGestureRecognizer(tapGesture)
+        categoryView.imageView.isUserInteractionEnabled = true
+        
+        //Buttons
+        playButton.addTarget(self, action: #selector(didTapPlay), for: .touchUpInside)
+        gameHistoryButton.addTarget(self, action: #selector(didTapGameHistory), for: .touchUpInside)
+        parametersButton.addTarget(self, action: #selector(didTapParameters), for: .touchUpInside)
+    }
+    
+    private func playSound(){
+        guard let url = Bundle.main.url(forResource: "click", withExtension: "mp3") else {
+            print("No sound found")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer.play()
+        } catch {
+            print("Audio playback error \(error.localizedDescription)")
+        }
+    }
+    
+    @objc private func didTapQuestions(){
+        playSound()
+        delegate?.didTapQuestions()
+    }
+    @objc private func didTapPlay(){
+        playSound()
+        //...
+    }
+    @objc private func didTapGameHistory(){
+        playSound()
+        //...
+    }
+    @objc private func didTapParameters(){
+        playSound()
+        //...
     }
 }
+
+
+//Проблема в том что кнопка не отвечает, походу конфигурация не правильно работает и когда тапаешь у нее нету таргета
