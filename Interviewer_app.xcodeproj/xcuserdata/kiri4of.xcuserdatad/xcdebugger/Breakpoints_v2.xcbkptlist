@@ -23,97 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EFD4F691-B156-475C-B133-48CEB2AA4374"
+            uuid = "34183075-4742-4F56-9887-B1767C0B4026"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Interviewer_app/Screens/MenuModule/View/MenuView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "configurateUI()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EFD4F691-B156-475C-B133-48CEB2AA4374 - 5d121b7a1484c04c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #6 (SnapKit.ConstraintMaker) -&gt; () in Interviewer_app.MenuView.setupViews() -&gt; ()"
-                  moduleName = "Interviewer_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Pet%20project&apos;s%20/Interviewer_app/Interviewer_app/Screens/MenuModule/View/MenuView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "1361">
-               </Location>
-               <Location
-                  uuid = "EFD4F691-B156-475C-B133-48CEB2AA4374 - 225b10ec4945b4a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Interviewer_app.MenuView.configurateUI() -&gt; ()"
-                  moduleName = "Interviewer_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Pet%20project&apos;s%20/Interviewer_app/Interviewer_app/Screens/MenuModule/View/MenuView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "65">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "04972C23-B53F-483B-84AD-DB3EDC5B4CC4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Interviewer_app/Screens/MenuModule/Controller/MenuViewController.swift"
+            filePath = "Interviewer_app/Screens/QuestionsModule/View/Header.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "didTapQuestions()"
+            landmarkName = "setupViews()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "04972C23-B53F-483B-84AD-DB3EDC5B4CC4 - d64f90fb0af0c286"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Interviewer_app.MenuViewController.didTapQuestions() -&gt; ()"
-                  moduleName = "Interviewer_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Pet%20project&apos;s%20/Interviewer_app/Interviewer_app/Screens/MenuModule/Controller/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "114">
-               </Location>
-               <Location
-                  uuid = "04972C23-B53F-483B-84AD-DB3EDC5B4CC4 - d64f90fb0af0c286"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Interviewer_app.MenuViewController.didTapQuestions() -&gt; ()"
-                  moduleName = "Interviewer_app"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Applications/Pet%20project&apos;s%20/Interviewer_app/Interviewer_app/Screens/MenuModule/Controller/MenuViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

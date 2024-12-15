@@ -58,7 +58,7 @@ extension CategoryView {
         
         imageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.width.height.equalTo(adapted(dimensionSize: 24, to: dimension))
+            make.width.height.equalTo(adapted(dimensionSize: 20, to: dimension))
             make.right.equalToSuperview().offset(-16)
         }
     }

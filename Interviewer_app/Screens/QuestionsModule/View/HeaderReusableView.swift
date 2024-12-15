@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-class HeaderView: UICollectionReusableView {
+class HeaderReusableView: UICollectionReusableView {
     static let identifier = "Header"
     
     private let titleLabel: UILabel = {

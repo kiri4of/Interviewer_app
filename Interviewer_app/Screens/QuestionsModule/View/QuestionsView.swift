@@ -3,10 +3,7 @@ import UIKit
 import SnapKit
 
 class QuestionsView: UIView {
-   private var allQuestionsLabel = UILabel()
-   private var totalQuestionsLabel = UILabel()
-   private var gamesPlayedLabel = UILabel()
-   private var playButton = CustomButton(title: "Play", font: AppFonts.inter14SemiBold)
+   private var headerView = HeaderView()
   private var collectionView: UICollectionView = {
         var layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -30,27 +27,38 @@ class QuestionsView: UIView {
 
 extension QuestionsView {
     func setupViews() {
-        addSubview(allQuestionsLabel)
-        addSubview(totalQuestionsLabel)
-        addSubview(gamesPlayedLabel)
-        addSubview(playButton)
+        addSubview(headerView)
         addSubview(collectionView)
-    }
-    
-    func setupCollectionView() {
-        collectionView.backgroundColor = .clear
-        collectionView.register(TopicCollectionViewCell.self, forCellWithReuseIdentifier: TopicCollectionViewCell.identifier)
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderView.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
         
-        addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
+        let screenHeight = UIScreen.main.bounds.height
+        let headerHeight = screenHeight / 10
+        
+        headerView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top)
+            make.leading.equalTo(self.snp.leading)
+            make.trailing.equalTo(self.snp.trailing)
+            make.height.equalTo(adapted(dimensionSize: headerHeight, to: dimension))
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(headerView.snp.bottom)
             make.bottom.equalTo(self.snp.bottom)
             make.leading.equalTo(self.snp.leading)
             make.trailing.equalTo(self.snp.trailing)
         }
+    }
+
+    
+    func setupCollectionView() {
+        collectionView.backgroundColor = .clear
+       collectionView.register(TopicCollectionViewCell.self, forCellWithReuseIdentifier: TopicCollectionViewCell.identifier)
+        collectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderReusableView.identifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+    
+    func configurateUI() {
+         
     }
 }
 
@@ -75,7 +83,7 @@ extension QuestionsView: UICollectionViewDataSource, UICollectionViewDelegate, U
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! HeaderView
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! HeaderReusableView
             header.configure(with: sections[indexPath.section].title)
             return header
         }

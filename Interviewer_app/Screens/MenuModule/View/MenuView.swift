@@ -13,7 +13,7 @@ class MenuView: UIView {
     private let informationView = InformationView()
     private let playButton = CustomButton(title: "Play", font: AppFonts.inter18SemiBold)
     private let gameHistoryButton = CustomButton(title: "Game history", font: AppFonts.inter16Regular)
-    private let parametersButton = ParametersButton()
+    private let settingsButton = ParametersButton()
     private var audioPlayer = AVAudioPlayer()
     private var viewModel: MenuViewModel!
     
@@ -41,7 +41,7 @@ extension MenuView {
         addSubview(informationView)
         addSubview(playButton)
         addSubview(gameHistoryButton)
-        addSubview(parametersButton)
+        addSubview(settingsButton)
         
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -65,7 +65,7 @@ extension MenuView {
             make.leading.equalTo(informationView.snp.leading)
             make.top.equalTo(informationView.snp.bottom).offset(25)
         }
-        parametersButton.snp.makeConstraints { make in
+        settingsButton.snp.makeConstraints { make in
             make.leading.equalTo(gameHistoryButton.snp.trailing).offset(15)
             make.top.equalTo(informationView.snp.bottom).offset(25)
             make.height.width.equalTo(gameHistoryButton.snp.height)
@@ -94,7 +94,7 @@ extension MenuView {
         //Buttons
         playButton.addTarget(self, action: #selector(didTapPlay), for: .touchUpInside)
         gameHistoryButton.addTarget(self, action: #selector(didTapGameHistory), for: .touchUpInside)
-        parametersButton.addTarget(self, action: #selector(didTapParameters), for: .touchUpInside)
+        settingsButton.addTarget(self, action: #selector(didTapParameters), for: .touchUpInside)
     }
     
     private func playSound(){
