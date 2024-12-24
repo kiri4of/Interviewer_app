@@ -6,7 +6,7 @@ class SettingsView: UIView {
         let label = UILabel()
         label.text = "Settings"
         label.font = AppFonts.inter14Regular
-        label.textColor = AppColor.buttonPrimaryBgColor
+        label.textColor = AppColor.itemPrimaryBgColor
         return label
     }()
     

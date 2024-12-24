@@ -97,34 +97,20 @@ extension MenuView {
         settingsButton.addTarget(self, action: #selector(didTapParameters), for: .touchUpInside)
     }
     
-    private func playSound(){
-        guard let url = Bundle.main.url(forResource: "click", withExtension: "mp3") else {
-            print("No sound found")
-            return
-        }
-        
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.play()
-        } catch {
-            print("Audio playback error \(error.localizedDescription)")
-        }
-    }
-    
     @objc private func didTapQuestions(){
-        playSound()
+        viewModel.playClickSound()
         delegate?.didTapQuestions()
     }
     @objc private func didTapPlay(){
-        playSound()
+        viewModel.playClickSound()
         //...
     }
     @objc private func didTapGameHistory(){
-        playSound()
+        viewModel.playClickSound()
         //...
     }
     @objc private func didTapParameters(){
-        playSound()
+        viewModel.playClickSound()
         //...
     }
 }

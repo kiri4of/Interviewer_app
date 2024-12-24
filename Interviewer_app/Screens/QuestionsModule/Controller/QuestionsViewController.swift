@@ -3,8 +3,12 @@ import UIKit
 
 class QuestionsViewController: BaseViewController<QuestionsView> {
     
-    override init(mainView: QuestionsView) {
+    private var viewModel: QuestionViewModel
+    
+    init(mainView: QuestionsView, viewModel: QuestionViewModel) {
+        self.viewModel = viewModel
         super.init(mainView: mainView)
+        self.mainView.bindViewModel(viewModel: viewModel)
     }
     
     required init?(coder: NSCoder) {

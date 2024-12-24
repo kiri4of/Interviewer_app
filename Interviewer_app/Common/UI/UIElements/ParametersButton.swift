@@ -4,7 +4,7 @@ import UIKit
 class ParametersButton: UIButton {
     private var bgColor: UIColor
     
-    init(bgColor: UIColor = AppColor.buttonPrimaryBgColor) {
+    init(bgColor: UIColor = AppColor.itemPrimaryBgColor) {
         self.bgColor = bgColor
         super.init(frame: .zero)
     }

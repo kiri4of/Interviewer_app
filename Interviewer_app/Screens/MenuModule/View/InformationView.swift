@@ -7,7 +7,7 @@ class InformationView: UIView {
         let label = UILabel()
        label.font = AppFonts.inter14Regular
        label.text = "Last game information: "
-       label.textColor = AppColor.buttonPrimaryBgColor
+       label.textColor = AppColor.itemPrimaryBgColor
         return label
     }()
     

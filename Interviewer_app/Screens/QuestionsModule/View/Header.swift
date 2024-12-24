@@ -65,6 +65,12 @@ class HeaderView: UIView {
         currentTopicLabel.text = "Middle interview"
         totalQuestionsLabel.text = "Questions at all:"
         gamesPlayedLabel.text = "Attempts: "
+        playButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapButton() {
+        let soundManager = SoundManager.shared
+        soundManager.playSound(named: AppSounds.click.rawValue)
     }
 }
 

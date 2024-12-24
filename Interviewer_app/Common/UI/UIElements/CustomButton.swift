@@ -6,7 +6,7 @@ class CustomButton: UIButton {
     private var bgColor: UIColor
     private var font: UIFont
     
-    init(title: String, bgColor: UIColor = AppColor.buttonPrimaryBgColor, font: UIFont) {
+    init(title: String, bgColor: UIColor = AppColor.itemPrimaryBgColor, font: UIFont) {
         self.title = title
         self.bgColor = bgColor
         self.font = font
@@ -22,7 +22,7 @@ class CustomButton: UIButton {
         
         let cornerRadius = self.frame.height / 3
         backgroundColor = bgColor
-        setTitleColor(AppColor.backgroundPrimaryColor, for: .normal)
+        setTitleColor(.black, for: .normal)
         setTitle(title, for: .normal)
         titleLabel?.font = font
         layer.cornerRadius = cornerRadius

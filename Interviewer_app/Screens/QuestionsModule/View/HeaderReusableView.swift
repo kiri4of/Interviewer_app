@@ -2,12 +2,12 @@ import UIKit
 import SnapKit
 
 class HeaderReusableView: UICollectionReusableView {
-    static let identifier = "Header"
+    static let identifier = "UICollectionReusableView"
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .label
+        label.font = AppFonts.inter14SemiBold
+        label.textColor = AppColor.primaryTextColor
         return label
     }()
     

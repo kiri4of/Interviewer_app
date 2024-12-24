@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F759EDDD2D0F311F00E12F68 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDDC2D0F311F00E12F68 /* Header.swift */; };
+		F759EDE32D134CA100E12F68 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE22D134CA100E12F68 /* QuestionView.swift */; };
+		F759EDE62D18742C00E12F68 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE52D18742C00E12F68 /* SoundManager.swift */; };
+		F759EDE92D18791100E12F68 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE82D18791100E12F68 /* QuestionViewModel.swift */; };
+		F759EDED2D187AB800E12F68 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDEC2D187AB800E12F68 /* Dynamic.swift */; };
+		F759EDEF2D1A4AF100E12F68 /* AppSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDEE2D1A4AF100E12F68 /* AppSounds.swift */; };
 		F77CB0FE2CC69572002D98A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77CB0FD2CC69572002D98A8 /* AppDelegate.swift */; };
 		F77CB1002CC69572002D98A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77CB0FF2CC69572002D98A8 /* SceneDelegate.swift */; };
 		F77CB1072CC6957C002D98A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77CB1062CC6957C002D98A8 /* Assets.xcassets */; };
@@ -44,8 +49,6 @@
 		F7F9AE3F2CDD307900A6EDF6 /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F77CB13B2CDBA62E002D98A8 /* WorkSans-Regular.ttf */; };
 		F7F9AE412CDD345300A6EDF6 /* ParametersButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE402CDD345300A6EDF6 /* ParametersButton.swift */; };
 		F7F9AE452CE147A400A6EDF6 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE442CE147A400A6EDF6 /* QuestionsViewController.swift */; };
-		F7F9AE482CE1486100A6EDF6 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE472CE1486100A6EDF6 /* QuestionsView.swift */; };
-		F7F9AE4A2CE164C900A6EDF6 /* TopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE492CE164C900A6EDF6 /* TopicCollectionViewCell.swift */; };
 		F7F9AE4D2CE3E3A600A6EDF6 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE4C2CE3E3A600A6EDF6 /* SectionModel.swift */; };
 		F7F9AE4F2CE3EB5000A6EDF6 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE4E2CE3EB5000A6EDF6 /* HeaderReusableView.swift */; };
 		F7F9AE512CE3EE2000A6EDF6 /* QuestionsScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F9AE502CE3EE2000A6EDF6 /* QuestionsScreenBuilder.swift */; };
@@ -56,6 +59,11 @@
 
 /* Begin PBXFileReference section */
 		F759EDDC2D0F311F00E12F68 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		F759EDE22D134CA100E12F68 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		F759EDE52D18742C00E12F68 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		F759EDE82D18791100E12F68 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		F759EDEC2D187AB800E12F68 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		F759EDEE2D1A4AF100E12F68 /* AppSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSounds.swift; sourceTree = "<group>"; };
 		F77CB0FA2CC69572002D98A8 /* Interviewer_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interviewer_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77CB0FD2CC69572002D98A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F77CB0FF2CC69572002D98A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,8 +100,6 @@
 		F7F9AE392CDD234700A6EDF6 /* CGFloat + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat + Extension.swift"; sourceTree = "<group>"; };
 		F7F9AE402CDD345300A6EDF6 /* ParametersButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersButton.swift; sourceTree = "<group>"; };
 		F7F9AE442CE147A400A6EDF6 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
-		F7F9AE472CE1486100A6EDF6 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
-		F7F9AE492CE164C900A6EDF6 /* TopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7F9AE4C2CE3E3A600A6EDF6 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		F7F9AE4E2CE3EB5000A6EDF6 /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		F7F9AE502CE3EE2000A6EDF6 /* QuestionsScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsScreenBuilder.swift; sourceTree = "<group>"; };
@@ -115,6 +121,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F759EDE42D18741800E12F68 /* SoundManager */ = {
+			isa = PBXGroup;
+			children = (
+				F759EDE52D18742C00E12F68 /* SoundManager.swift */,
+			);
+			path = SoundManager;
+			sourceTree = "<group>";
+		};
+		F759EDE72D1878F200E12F68 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F759EDE82D18791100E12F68 /* QuestionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F759EDEA2D1879AB00E12F68 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F759EDEC2D187AB800E12F68 /* Dynamic.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		F77CB0F12CC69572002D98A8 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +191,7 @@
 		F77CB1132CC69992002D98A8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F759EDEA2D1879AB00E12F68 /* Utilities */,
 				F7F9AE522CE54A7500A6EDF6 /* Navigation */,
 				F77CB1432CDBA76F002D98A8 /* Adaptive */,
 				F77CB1192CC69A29002D98A8 /* UI */,
@@ -171,6 +202,7 @@
 		F77CB1142CC699AD002D98A8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F759EDE42D18741800E12F68 /* SoundManager */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -251,6 +283,7 @@
 				F77CB1382CDBA60E002D98A8 /* Fonts */,
 				F77CB1312CCAA344002D98A8 /* AppColor.swift */,
 				F77CB1362CDBA575002D98A8 /* AppFonts.swift */,
+				F759EDEE2D1A4AF100E12F68 /* AppSounds.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -340,6 +373,7 @@
 			children = (
 				F7F9AE4B2CE3E39B00A6EDF6 /* Model */,
 				F7F9AE462CE1485000A6EDF6 /* View */,
+				F759EDE72D1878F200E12F68 /* ViewModel */,
 				F7F9AE432CE1479100A6EDF6 /* Controller */,
 				F7F9AE552CE54B3E00A6EDF6 /* Helper */,
 			);
@@ -357,9 +391,9 @@
 		F7F9AE462CE1485000A6EDF6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7F9AE472CE1486100A6EDF6 /* QuestionsView.swift */,
-				F7F9AE4E2CE3EB5000A6EDF6 /* HeaderReusableView.swift */,
+				F759EDE22D134CA100E12F68 /* QuestionView.swift */,
 				F759EDDC2D0F311F00E12F68 /* Header.swift */,
+				F7F9AE4E2CE3EB5000A6EDF6 /* HeaderReusableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -384,7 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				F7F9AE502CE3EE2000A6EDF6 /* QuestionsScreenBuilder.swift */,
-				F7F9AE492CE164C900A6EDF6 /* TopicCollectionViewCell.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -490,12 +523,15 @@
 				F7F9AE5C2CE7627200A6EDF6 /* EnlargedImageView.swift in Sources */,
 				F77CB1372CDBA576002D98A8 /* AppFonts.swift in Sources */,
 				F77CB12E2CC95F6F002D98A8 /* MenuScreenBuilder.swift in Sources */,
+				F759EDEF2D1A4AF100E12F68 /* AppSounds.swift in Sources */,
+				F759EDE62D18742C00E12F68 /* SoundManager.swift in Sources */,
 				F77CB1322CCAA344002D98A8 /* AppColor.swift in Sources */,
-				F7F9AE482CE1486100A6EDF6 /* QuestionsView.swift in Sources */,
 				F77CB1212CC6A05C002D98A8 /* MenuView.swift in Sources */,
 				F7F9AE4D2CE3E3A600A6EDF6 /* SectionModel.swift in Sources */,
+				F759EDE32D134CA100E12F68 /* QuestionView.swift in Sources */,
 				F77CB12C2CC940F0002D98A8 /* InformationView.swift in Sources */,
 				F7F9AE512CE3EE2000A6EDF6 /* QuestionsScreenBuilder.swift in Sources */,
+				F759EDED2D187AB800E12F68 /* Dynamic.swift in Sources */,
 				F7F9AE542CE54A9500A6EDF6 /* Coordinator.swift in Sources */,
 				F7F9AE4F2CE3EB5000A6EDF6 /* HeaderReusableView.swift in Sources */,
 				F77CB1472CDBA870002D98A8 /* Device.swift in Sources */,
@@ -508,7 +544,7 @@
 				F77CB0FE2CC69572002D98A8 /* AppDelegate.swift in Sources */,
 				F77CB1342CCEE817002D98A8 /* CustomButton.swift in Sources */,
 				F77CB1232CC6A0F7002D98A8 /* MenuViewModel.swift in Sources */,
-				F7F9AE4A2CE164C900A6EDF6 /* TopicCollectionViewCell.swift in Sources */,
+				F759EDE92D18791100E12F68 /* QuestionViewModel.swift in Sources */,
 				F7F9AE3A2CDD234700A6EDF6 /* CGFloat + Extension.swift in Sources */,
 				F7B10C9A2CF8B281008C09F3 /* SettingsView.swift in Sources */,
 				F7F9AE5A2CE571ED00A6EDF6 /* MenuCoordinator.swift in Sources */,

@@ -5,7 +5,7 @@ enum AppColor {
     static let viewPrimaryColor: UIColor = #colorLiteral(red: 0.2352941176, green: 0.1647058824, blue: 0.1294117647, alpha: 1)
     static let descriptionColor: UIColor = #colorLiteral(red: 0.8352941176, green: 0.8078431373, blue: 0.6392156863, alpha: 1)
     static let primaryTextColor: UIColor = #colorLiteral(red: 0.8980392157, green: 0.8980392157, blue: 0.7960784314, alpha: 1)
-    static let buttonPrimaryBgColor: UIColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.4117647059, alpha: 1)
+    static let itemPrimaryBgColor: UIColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.4117647059, alpha: 1)
 
     enum Gradient {
         static let yellow =  #colorLiteral(red: 1, green: 0.7647058824, blue: 0.1607843137, alpha: 1)

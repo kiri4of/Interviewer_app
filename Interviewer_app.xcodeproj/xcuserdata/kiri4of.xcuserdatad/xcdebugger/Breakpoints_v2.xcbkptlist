@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "34183075-4742-4F56-9887-B1767C0B4026"
+            uuid = "C9DEC40C-247E-4AF9-A0E5-FD7B27E35B66"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Interviewer_app/Screens/QuestionsModule/View/Header.swift"
+            filePath = "Interviewer_app/Screens/QuestionsModule/Controller/QuestionsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "setupViews()"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "init?(coder:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
