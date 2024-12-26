@@ -16,7 +16,7 @@ class QuestionsView: UIView {
         stackView.distribution = .fill
         return stackView
     }()
-    
+    private var previousWidth: CGFloat = 0 //for layout
     private let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     private var headerView = HeaderView()
     private var viewModel: QuestionViewModel!
@@ -29,6 +29,15 @@ class QuestionsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let currentWidth = verticalStackView.bounds.width
+        if currentWidth != previousWidth {
+            previousWidth = currentWidth
+            reloadStackView()
+        }
     }
     
     func bindViewModel(viewModel: QuestionViewModel) {
@@ -73,22 +82,29 @@ extension QuestionsView {
         
         guard let viewModel = viewModel else { return }
         
-        for section in sections {
+        let containerWidth = verticalStackView.bounds.width - 16
+        let minimumItemWidth: CGFloat = 80 //min button width
+        let maximumItemWidth: CGFloat = 150 //max button width
+        
+        let formattedSections = viewModel.getFormattedSections(
+            containerWidth: containerWidth,
+            minimumItemWidth: minimumItemWidth,
+            maximumItemWidth: maximumItemWidth
+        )
+        
+        for section in formattedSections {
             let headerLabel = UILabel()
             headerLabel.text = section.title
             headerLabel.font = AppFonts.inter16SemiBold
             verticalStackView.addArrangedSubview(headerLabel)
             
-            let rows = viewModel.splitIntoRows(items: section.items, itemsPerRow: 3)
-            
-            for row in rows {
+            for row in section.rows {
                 let horizontalStackView = createHorizontalStackView(with: row)
                 verticalStackView.addArrangedSubview(horizontalStackView)
             }
         }
     }
 
-    
     private func createHorizontalStackView(with items: [String]) -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -115,5 +131,5 @@ extension QuestionsView {
     
 }
 
+//перенести функционал во viewModel и почистить коменты
 
-//Заебок, теперь реши проблему с viewModel у question и перенеси метод splitToRows во viewModel, а дальше заебашь звук для всех кнопочек и сделай высоту кнопок тоже чуток больше, ну а потом придумаешь че делать, ЕЩьКЕРЕЕ АБАДУЮНДУНДА ЭЭЭЭ
