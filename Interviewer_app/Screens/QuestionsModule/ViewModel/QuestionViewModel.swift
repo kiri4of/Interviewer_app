@@ -8,6 +8,24 @@ class QuestionViewModel {
         self.sections = sections
     }
     
+    func highlightButton(selectedButton: inout CustomButton?, sender: CustomButton) {
+        if let previousButton = selectedButton {
+            previousButton.backgroundColor = AppColor.itemPrimaryBgColor
+            previousButton.layer.borderColor = UIColor.clear.cgColor
+            previousButton.layer.borderWidth = 1
+        }
+        
+        sender.backgroundColor = AppColor.itemPrimaryBgColor.withAlphaComponent(0.7)
+        sender.layer.borderColor = UIColor.white.cgColor
+        sender.layer.borderWidth = 1
+        
+        selectedButton = sender
+        
+        let soundManager = SoundManager.shared
+        soundManager.playSound(named: AppSounds.click.rawValue)
+    }
+    
+    //MARK: - Items in StackView setup
     func getFormattedSections(containerWidth: CGFloat, minimumItemWidth: CGFloat, maximumItemWidth: CGFloat, spacing: CGFloat = 8) -> [(title: String, rows: [[String]])] {
         return sections.map { section in
             let rows = splitIntoRows(
@@ -21,7 +39,7 @@ class QuestionViewModel {
         }
     }
     
-   private func splitIntoRows(items: [String], minimumItemWidth: CGFloat, maximumItemWidth: CGFloat, containerWidth: CGFloat, spacing: CGFloat = 8) -> [[String]] {
+    private func splitIntoRows(items: [String], minimumItemWidth: CGFloat, maximumItemWidth: CGFloat, containerWidth: CGFloat, spacing: CGFloat = 8) -> [[String]] {
         var rows: [[String]] = []
         var currentRow: [String] = []
         var currentRowWidth: CGFloat = 0
@@ -56,6 +74,7 @@ class QuestionViewModel {
         let textSize = (item as NSString).size(withAttributes: attributes)
         return textSize.width
     }
+    
 }
 
 

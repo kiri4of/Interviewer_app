@@ -18,6 +18,7 @@ class QuestionsView: UIView {
     }()
     private var previousWidth: CGFloat = 0 //for layout
     private let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    private var selectedButton: CustomButton?
     private var headerView = HeaderView()
     private var viewModel: QuestionViewModel!
     
@@ -30,7 +31,7 @@ class QuestionsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         let currentWidth = verticalStackView.bounds.width
@@ -67,8 +68,8 @@ extension QuestionsView {
         verticalScrollView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
             make.bottom.equalTo(self.snp.bottom)
-            make.leading.equalTo(self.snp.leading).offset(15)
-            make.trailing.equalTo(self.snp.trailing).offset(-15)
+            make.leading.equalTo(self.snp.leading).offset(12)
+            make.trailing.equalTo(self.snp.trailing).offset(-12)
         }
         
         verticalStackView.snp.makeConstraints { make in
@@ -104,7 +105,7 @@ extension QuestionsView {
             }
         }
     }
-
+    
     private func createHorizontalStackView(with items: [String]) -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -112,24 +113,21 @@ extension QuestionsView {
         stackView.alignment = .fill
         stackView.distribution = .fillProportionally
         
-        for row in items {
-            let button = CustomButton(title: row, bgColor: AppColor.itemPrimaryBgColor, font: AppFonts.inter12Regular)
+        for title in items {
+            let button = CustomButton(title: title, bgColor: AppColor.itemPrimaryBgColor, font: AppFonts.inter12Regular)
             button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-            
             button.snp.makeConstraints { make in
-                make.height.equalTo(adapted(dimensionSize: 33, to: dimension))
+                make.height.equalTo(adapted(dimensionSize: 34, to: dimension))
             }
             stackView.addArrangedSubview(button)
         }
         return stackView
     }
     
-    @objc private func didTapButton(){
-        let soundManager = SoundManager.shared
-        soundManager.playSound(named: AppSounds.click.rawValue)
+    @objc private func didTapButton(sender: CustomButton){
+        viewModel.highlightButton(selectedButton: &selectedButton, sender: sender)
     }
     
 }
 
-//перенести функционал во viewModel и почистить коменты
 

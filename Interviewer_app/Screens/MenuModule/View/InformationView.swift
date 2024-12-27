@@ -14,21 +14,21 @@ class InformationView: UIView {
     private var categoryLabel: UILabel = {
          let label = UILabel()
          label.font = AppFonts.inter12Regular
-         label.textColor = AppColor.primaryTextColor
+         label.textColor = AppColor.lightPrimaryTextColor
          return label
      }()
     
     private var questionsLabel: UILabel = {
          let label = UILabel()
          label.font = AppFonts.inter12Regular
-         label.textColor = AppColor.primaryTextColor
+         label.textColor = AppColor.lightPrimaryTextColor
          return label
      }()
     
     private var correctAnswersLabel: UILabel = {
          let label = UILabel()
          label.font = AppFonts.inter12Regular
-         label.textColor = AppColor.primaryTextColor
+         label.textColor = AppColor.lightPrimaryTextColor
          return label
      }()
     

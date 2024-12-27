@@ -5,19 +5,19 @@ class HeaderView: UIView {
     private var currentTopicLabel: UILabel = {
         var label = UILabel()
         label.font = AppFonts.inter14Regular
-        label.textColor = AppColor.primaryTextColor
+        label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
     private var totalQuestionsLabel: UILabel = {
         var label = UILabel()
         label.font = AppFonts.inter12Regular
-        label.textColor = AppColor.primaryTextColor
+        label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
     private var gamesPlayedLabel: UILabel = {
         var label = UILabel()
         label.font = AppFonts.inter12Regular
-        label.textColor = AppColor.primaryTextColor
+        label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
     private var playButton = CustomButton(title: "Play", font: AppFonts.inter14SemiBold)

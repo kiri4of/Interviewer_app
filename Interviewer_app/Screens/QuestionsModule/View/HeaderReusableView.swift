@@ -7,7 +7,7 @@ class HeaderReusableView: UICollectionReusableView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.inter14SemiBold
-        label.textColor = AppColor.primaryTextColor
+        label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
     

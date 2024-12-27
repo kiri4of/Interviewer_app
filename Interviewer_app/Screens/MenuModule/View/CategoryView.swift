@@ -12,7 +12,7 @@ class CategoryView: UIView {
     private var categoryLabel: UILabel = {
         let label = UILabel()
         label.font = AppFonts.inter12SemiBold
-        label.textColor = AppColor.primaryTextColor
+        label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
     
