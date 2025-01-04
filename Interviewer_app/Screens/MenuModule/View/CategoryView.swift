@@ -5,7 +5,7 @@ class CategoryView: UIView {
         let label = UILabel()
         label.text = "Current category:"
         label.font = AppFonts.inter14Regular
-        label.textColor = AppColor.itemPrimaryBgColor
+        label.textColor = AppColor.titlePrimaryBgColor
         return label
     }()
     
@@ -19,7 +19,7 @@ class CategoryView: UIView {
     var imageView: EnlargedImageView = {
         let image = EnlargedImageView()
         image.image = UIImage(systemName: "chevron.forward.circle")
-        image.tintColor = AppColor.itemPrimaryBgColor
+        image.tintColor = AppColor.titlePrimaryBgColor
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

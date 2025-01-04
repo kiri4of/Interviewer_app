@@ -5,6 +5,7 @@ import AVFoundation
 
 protocol MenuViewProtocol: AnyObject {
     func didTapQuestions()
+    func didTapParameters()
 }
 
 class MenuView: UIView {
@@ -12,7 +13,7 @@ class MenuView: UIView {
     let categoryView = CategoryView()
     private let informationView = InformationView()
     private let playButton = CustomButton(title: "Play", font: AppFonts.inter18SemiBold)
-    private let gameHistoryButton = CustomButton(title: "Game history", font: AppFonts.inter16Regular)
+    private let gameHistoryButton = CustomButton(title: "Game history", font: AppFonts.inter16SemiBold)
     private let settingsButton = ParametersButton()
     private var audioPlayer = AVAudioPlayer()
     private var viewModel: MenuViewModel!
@@ -111,9 +112,7 @@ extension MenuView {
     }
     @objc private func didTapParameters(){
         viewModel.playClickSound()
-        //...
+        delegate?.didTapParameters()
     }
 }
 
-
-//Проблема в том что кнопка не отвечает, походу конфигурация не правильно работает и когда тапаешь у нее нету таргета

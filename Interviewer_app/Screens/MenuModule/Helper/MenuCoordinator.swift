@@ -19,4 +19,12 @@ class MenuCoordinator: Coordinator {
         navigationController.viewControllers.first?.present(questionsVC, animated: true)
         //navigationController.pushViewController(questionsVC, animated: false)
     }
+    
+    func goSettingsViewController() {
+        let settingsVC = SettingsViewController()
+        settingsVC.modalPresentationStyle = .overFullScreen
+        settingsVC.modalTransitionStyle = .crossDissolve
+        navigationController.viewControllers.first?.present(settingsVC, animated: true)
+    }
 }
+

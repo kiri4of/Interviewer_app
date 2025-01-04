@@ -35,4 +35,8 @@ extension MenuViewController: MenuViewProtocol {
     func didTapQuestions() {
         coordinator?.goQuestionsViewController()
     }
+    
+    func didTapParameters() {
+        coordinator?.goSettingsViewController()
+    }
 }

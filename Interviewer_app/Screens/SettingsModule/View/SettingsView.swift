@@ -1,49 +1,96 @@
-import UIKit
-import SnapKit
 
-class SettingsView: UIView {
-    private let settingsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Settings"
-        label.font = AppFonts.inter14Regular
-        label.textColor = AppColor.itemPrimaryBgColor
-        return label
-    }()
-    
-    private let configurationView = UIView()
-    private let stackView = UIStackView()
-    private let dissmissButton = UIButton()
-    private let soundTextButton = UIButton()
-    private let soundSegmentControl = UISegmentedControl()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+import SwiftUI
+
+struct SettingOption {
+    var title: String
+    var selection: Binding<Bool>
+    var onText: String
+    var offText: String
 }
 
-extension SettingsView {
-    private func setupViews() {
-        addSubview(configurationView)
-        configurationView.addSubview(settingsLabel)
-        configurationView.addSubview(stackView)
-        configurationView.addSubview(dissmissButton)
+struct SettingsView: View {
+    @State private var isSequanceEnable = false
+    @State private var isTipsShowsEnable = false
+    @State private var isGoingAfterPrompEnable = true
+    @State private var isSoundEnabled = true
+   
+    
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
         
-        stackView.addArrangedSubview(soundTextButton)
-        stackView.addArrangedSubview(soundSegmentControl)
+        var options = [
+            SettingOption(title: "Sequence of questions:",
+                          selection: $isSequanceEnable,
+                          onText: "Default",
+                          offText: "Random"),
+            SettingOption(title: "Show tips/teory:",
+                          selection: $isTipsShowsEnable,
+                          onText: "Never",
+                          offText: "After a tip"),
+            SettingOption(title: "Going after the prompt:",
+                          selection: $isGoingAfterPrompEnable,
+                          onText: "Stay",
+                          offText: "Go"),
+            SettingOption(title: "Sounds in the game:",
+                          selection: $isSoundEnabled,
+                          onText: "On",
+                          offText: "Off")
+        ]
         
-        settingsLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalToSuperview()
+        VStack {
+            Text("Settings")
+                .padding()
+                .font(Font(AppFonts.inter24SemiBold))
+                .foregroundStyle(Color(AppColor.lightPrimaryTextColor))
+            
+            ForEach(options.indices, id: \.self) { index in
+                let option = options[index]
+                SettingsOptionView(title: option.title,
+                                   selection: option.selection,
+                                   onText: option.onText,
+                                   offText: option.offText)
+                .onChange(of: isSoundEnabled) { newValue in
+                    SoundManager.shared.toggleSound(newValue)
+                }
+                .padding(.bottom)
+            }
+            
+            
+            ScreenLine()
+                .stroke(.gray, lineWidth: 1)
+                .frame(height: 1)
+                .padding(.horizontal, 30)
+            
+            Spacer()
+                .frame(height: 30)
+            
+            Button {
+                dismiss()
+            } label: {
+                Text("Close")
+                    .font(Font(AppFonts.inter18SemiBold))
+                    .foregroundColor(Color(AppColor.darkPrimaryTextColor))
+                    .frame(maxWidth: .infinity, maxHeight: 40)
+                    .background(
+                        Color(AppColor.itemPrimaryBgColor),
+                        in: RoundedRectangle(
+                            cornerRadius: 16,
+                            style: .continuous
+                        )
+                    )
+            }
+            .padding(.horizontal, 16)
+            Spacer()
+                .frame(height: 50)
+            
         }
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(settingsLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(AppColor.backgroundPrimaryColor))
     }
 }
+
+#Preview {
+    SettingsView()
+}
+

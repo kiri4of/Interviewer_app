@@ -44,6 +44,7 @@ enum AppFonts {
     static let inter12Regular = Inter.regular(size: 12)
     static let inter10Regular = Inter.regular(size: 10)
     
+    static let inter24SemiBold = Inter.semiBold(size: 24)
     static let inter18SemiBold = Inter.semiBold(size: 18)
     static let inter16SemiBold = Inter.semiBold(size: 16)
     static let inter14SemiBold = Inter.semiBold(size: 14)
