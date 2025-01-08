@@ -1,9 +1,3 @@
-//
-//  SettingsOptionView.swift
-//  Interviewer_app
-//
-//  Created by Kiri4of on 03/01/2025.
-//
 
 import SwiftUI
 

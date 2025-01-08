@@ -1,9 +1,3 @@
-//
-//  ScreenLine.swift
-//  Interviewer_app
-//
-//  Created by Kiri4of on 04/01/2025.
-//
 
 import SwiftUI
 

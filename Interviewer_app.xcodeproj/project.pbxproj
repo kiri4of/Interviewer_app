@@ -11,6 +11,7 @@
 		F75615D42D205B7700045956 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615D32D205B7700045956 /* SettingsViewController.swift */; };
 		F75615D62D284D4800045956 /* SettingsOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615D52D284D4800045956 /* SettingsOptionView.swift */; };
 		F75615DA2D29766F00045956 /* ScreenLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615D92D29766F00045956 /* ScreenLine.swift */; };
+		F75615DE2D2F275000045956 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615DD2D2F275000045956 /* SettingsViewModel.swift */; };
 		F759EDDD2D0F311F00E12F68 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDDC2D0F311F00E12F68 /* Header.swift */; };
 		F759EDE32D134CA100E12F68 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE22D134CA100E12F68 /* QuestionView.swift */; };
 		F759EDE62D18742C00E12F68 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE52D18742C00E12F68 /* SoundManager.swift */; };
@@ -64,6 +65,7 @@
 		F75615D32D205B7700045956 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F75615D52D284D4800045956 /* SettingsOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionView.swift; sourceTree = "<group>"; };
 		F75615D92D29766F00045956 /* ScreenLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLine.swift; sourceTree = "<group>"; };
+		F75615DD2D2F275000045956 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		F759EDDC2D0F311F00E12F68 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F759EDE22D134CA100E12F68 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		F759EDE52D18742C00E12F68 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -138,9 +140,24 @@
 			children = (
 				F75615D12D20585A00045956 /* SettingsView.swift */,
 				F75615D52D284D4800045956 /* SettingsOptionView.swift */,
-				F75615D92D29766F00045956 /* ScreenLine.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F75615DB2D2D4B4800045956 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F75615D92D29766F00045956 /* ScreenLine.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F75615DC2D2F273D00045956 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F75615DD2D2F275000045956 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F759EDE42D18741800E12F68 /* SoundManager */ = {
@@ -369,6 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				F75615D82D29762000045956 /* View */,
+				F75615DC2D2F273D00045956 /* ViewModel */,
+				F75615DB2D2D4B4800045956 /* Helper */,
 				F75615D72D29761300045956 /* Controller */,
 			);
 			path = SettingsModule;
@@ -546,6 +565,7 @@
 				F77CB12A2CC6B965002D98A8 /* CategoryView.swift in Sources */,
 				F77CB11C2CC69A3E002D98A8 /* BaseViewController.swift in Sources */,
 				F77CB1492CDBA87D002D98A8 /* Dimension.swift in Sources */,
+				F75615DE2D2F275000045956 /* SettingsViewModel.swift in Sources */,
 				F759EDDD2D0F311F00E12F68 /* Header.swift in Sources */,
 				F77CB0FE2CC69572002D98A8 /* AppDelegate.swift in Sources */,
 				F77CB1342CCEE817002D98A8 /* CustomButton.swift in Sources */,

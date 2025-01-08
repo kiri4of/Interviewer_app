@@ -9,31 +9,26 @@ struct SettingOption {
 }
 
 struct SettingsView: View {
-    @State private var isSequanceEnable = false
-    @State private var isTipsShowsEnable = false
-    @State private var isGoingAfterPrompEnable = true
-    @State private var isSoundEnabled = true
-   
-    
+    @ObservedObject var viewModel: SettingsViewModel
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         
         var options = [
             SettingOption(title: "Sequence of questions:",
-                          selection: $isSequanceEnable,
+                          selection: $viewModel.isSequanceEnable,
                           onText: "Default",
                           offText: "Random"),
             SettingOption(title: "Show tips/teory:",
-                          selection: $isTipsShowsEnable,
+                          selection: $viewModel.isTipsShowsEnable,
                           onText: "Never",
                           offText: "After a tip"),
             SettingOption(title: "Going after the prompt:",
-                          selection: $isGoingAfterPrompEnable,
+                          selection: $viewModel.isGoingAfterPrompEnable,
                           onText: "Stay",
                           offText: "Go"),
             SettingOption(title: "Sounds in the game:",
-                          selection: $isSoundEnabled,
+                          selection: $viewModel.isSoundEnabled,
                           onText: "On",
                           offText: "Off")
         ]
@@ -50,9 +45,6 @@ struct SettingsView: View {
                                    selection: option.selection,
                                    onText: option.onText,
                                    offText: option.offText)
-                .onChange(of: isSoundEnabled) { newValue in
-                    SoundManager.shared.toggleSound(newValue)
-                }
                 .padding(.bottom)
             }
             
@@ -91,6 +83,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(viewModel: SettingsViewModel())
 }
 

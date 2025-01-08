@@ -1,11 +1,41 @@
+import Foundation
 import AVFoundation
 
 class SoundManager {
     static let shared = SoundManager()
     private var audioPlayer: AVAudioPlayer?
-    private var isSoundEnabled = true
+    private var isSoundEnabledEnternal = true
     
-    private init() {}
+    var isSoundEnabled: Bool {
+        get { isSoundEnabledEnternal }
+        set {
+            isSoundEnabledEnternal = newValue
+            if !isSoundEnabledEnternal {
+                stopSound()
+            }
+        }
+    }
+    
+    private init() {
+        loadInitialSettings()
+    }
+    
+    private func loadInitialSettings() {
+        if let savedValue = UserDefaults.standard.value(forKey: "isSoundEnabled") as? Bool {
+            isSoundEnabledEnternal = savedValue
+        } else {
+            isSoundEnabledEnternal = true
+        }
+    }
+    
+    func toggleSound(_ isEnabled: Bool) {
+        isSoundEnabled = isEnabled
+        saveSettings()
+    }
+    
+    private func saveSettings() {
+        UserDefaults.standard.setValue(isSoundEnabledEnternal, forKey: "isSoundEnabled")
+    }
     
     func playSound(named soundName: String, withExtension soundExtension: String = "mp3"){
         
@@ -27,15 +57,8 @@ class SoundManager {
         }
     }
     
-    func toggleSound(_ isEnabled: Bool) {
-        isSoundEnabled = isEnabled
-        if isEnabled{
-            isSoundEnabled = false
-        } else {
-            isSoundEnabled = true
-        }
+    func stopSound() {
+        audioPlayer?.stop()
     }
-    
- 
     
 }

@@ -3,6 +3,7 @@ import SwiftUI
 import SnapKit
 
 class SettingsViewController: UIViewController {
+    private let viewModel = SettingsViewModel()
     private let contentView = UIView()
 
     override func viewDidLoad() {
@@ -11,10 +12,8 @@ class SettingsViewController: UIViewController {
     }
 
     private func setupView() {
-        // Устанавливаем прозрачный фон
         view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
 
-        // Настройка contentView
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 16
         contentView.clipsToBounds = true
@@ -29,8 +28,8 @@ class SettingsViewController: UIViewController {
             make.height.equalTo(view.snp.height).multipliedBy(0.6)
         }
         
-        // Добавляем SwiftUI-вью в contentView
-        let settingsView = SettingsView()
+        // add SUI to contentview
+        let settingsView = SettingsView(viewModel: viewModel)
         let hostingController = UIHostingController(rootView: settingsView)
 
         addChild(hostingController)
@@ -49,7 +48,7 @@ class SettingsViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first, touch.view == self.view {
-            dismiss(animated: true, completion: nil) // Закрыть при касании фона
+            dismiss(animated: true, completion: nil) // close when taped
         }
     }
 }
