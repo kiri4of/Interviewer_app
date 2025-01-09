@@ -1,10 +1,14 @@
 
 import Foundation
 
-protocol MenuViewModelProtocol {
+class MenuViewModel  {
+    var image = Dynamic("")
+    var currentCategory = Dynamic("")
+    var lastGameCategory = Dynamic("")
+    var lastGameQuestions = Dynamic("")
+    var lastGameCorrectAnswer = Dynamic("")
     
-}
-
-class MenuViewModel: MenuViewModelProtocol {
-    
+    func playClickSound() {
+        SoundManager.shared.playSound(named: "click")
+    }
 }
