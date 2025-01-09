@@ -21,7 +21,7 @@ class SoundManager {
     }
     
     private func loadInitialSettings() {
-        if let savedValue = UserDefaults.standard.value(forKey: "isSoundEnabled") as? Bool {
+        if let savedValue = UserDefaultsManager.shared.getValue(forKey: "isSoundEnabled", as: Bool.self) {
             isSoundEnabledEnternal = savedValue
         } else {
             isSoundEnabledEnternal = true
@@ -34,7 +34,7 @@ class SoundManager {
     }
     
     private func saveSettings() {
-        UserDefaults.standard.setValue(isSoundEnabledEnternal, forKey: "isSoundEnabled")
+        UserDefaultsManager.shared.setValue(isSoundEnabledEnternal, forKey: "isSoundEnabled")
     }
     
     func playSound(named soundName: String, withExtension soundExtension: String = "mp3"){

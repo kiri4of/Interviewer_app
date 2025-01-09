@@ -12,6 +12,7 @@
 		F75615D62D284D4800045956 /* SettingsOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615D52D284D4800045956 /* SettingsOptionView.swift */; };
 		F75615DA2D29766F00045956 /* ScreenLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615D92D29766F00045956 /* ScreenLine.swift */; };
 		F75615DE2D2F275000045956 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615DD2D2F275000045956 /* SettingsViewModel.swift */; };
+		F75615E12D30521300045956 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75615E02D30521300045956 /* UserDefaultsManager.swift */; };
 		F759EDDD2D0F311F00E12F68 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDDC2D0F311F00E12F68 /* Header.swift */; };
 		F759EDE32D134CA100E12F68 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE22D134CA100E12F68 /* QuestionView.swift */; };
 		F759EDE62D18742C00E12F68 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759EDE52D18742C00E12F68 /* SoundManager.swift */; };
@@ -66,6 +67,7 @@
 		F75615D52D284D4800045956 /* SettingsOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionView.swift; sourceTree = "<group>"; };
 		F75615D92D29766F00045956 /* ScreenLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenLine.swift; sourceTree = "<group>"; };
 		F75615DD2D2F275000045956 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F75615E02D30521300045956 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		F759EDDC2D0F311F00E12F68 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F759EDE22D134CA100E12F68 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		F759EDE52D18742C00E12F68 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F75615DF2D3051CE00045956 /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				F75615E02D30521300045956 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaultsManager;
+			sourceTree = "<group>";
+		};
 		F759EDE42D18741800E12F68 /* SoundManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +251,7 @@
 		F77CB1142CC699AD002D98A8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F75615DF2D3051CE00045956 /* UserDefaultsManager */,
 				F759EDE42D18741800E12F68 /* SoundManager */,
 			);
 			path = Managers;
@@ -559,6 +570,7 @@
 				F7F9AE512CE3EE2000A6EDF6 /* QuestionsScreenBuilder.swift in Sources */,
 				F759EDED2D187AB800E12F68 /* Dynamic.swift in Sources */,
 				F7F9AE542CE54A9500A6EDF6 /* Coordinator.swift in Sources */,
+				F75615E12D30521300045956 /* UserDefaultsManager.swift in Sources */,
 				F7F9AE4F2CE3EB5000A6EDF6 /* HeaderReusableView.swift in Sources */,
 				F77CB1472CDBA870002D98A8 /* Device.swift in Sources */,
 				F7F9AE412CDD345300A6EDF6 /* ParametersButton.swift in Sources */,

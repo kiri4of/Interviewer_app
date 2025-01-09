@@ -2,24 +2,27 @@ import UIKit
 import SnapKit
 
 class HeaderView: UIView {
-    private var currentTopicLabel: UILabel = {
+    var currentTopicLabel: UILabel = {
         var label = UILabel()
-        label.font = AppFonts.inter14Regular
+        label.font = AppFonts.inter14SemiBold
         label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
+    
     private var totalQuestionsLabel: UILabel = {
         var label = UILabel()
         label.font = AppFonts.inter12Regular
         label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
+    
     private var gamesPlayedLabel: UILabel = {
         var label = UILabel()
         label.font = AppFonts.inter12Regular
         label.textColor = AppColor.lightPrimaryTextColor
         return label
     }()
+    
     private var playButton = CustomButton(title: "Play", font: AppFonts.inter14SemiBold)
     
     override init(frame: CGRect) {
@@ -73,4 +76,3 @@ class HeaderView: UIView {
         soundManager.playSound(named: AppSounds.click.rawValue)
     }
 }
-

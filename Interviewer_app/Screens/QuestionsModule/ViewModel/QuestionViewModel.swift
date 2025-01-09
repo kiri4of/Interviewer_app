@@ -75,6 +75,11 @@ class QuestionViewModel {
         return textSize.width
     }
     
+    //MARK: - Hearder View configurate
+    func changeTopicTitle(_ title: String) {
+        
+    }
+    
 }
 
 

@@ -16,6 +16,8 @@ class QuestionsView: UIView {
         stackView.distribution = .fill
         return stackView
     }()
+    
+    private var currentTitle = ""
     private var previousWidth: CGFloat = 0 //for layout
     private let sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     private var selectedButton: CustomButton?
@@ -126,6 +128,7 @@ extension QuestionsView {
     
     @objc private func didTapButton(sender: CustomButton){
         viewModel.highlightButton(selectedButton: &selectedButton, sender: sender)
+        headerView.currentTopicLabel.text = sender.titleLabel?.text
     }
     
 }
